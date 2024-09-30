@@ -18,7 +18,7 @@ vim.opt.splitbelow = true -- splitting a window will put the new window below th
 --vim.opt.incsearch = true
 
 vim.opt.spelllang = { "en_us", "ru" }
-vim.opt.spell = true
+vim.opt.spell = false
 
 --vim.opt.swapfile = false
 
