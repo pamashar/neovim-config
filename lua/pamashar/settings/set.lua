@@ -24,5 +24,5 @@ vim.opt.spell = true
 
 vim.opt.colorcolumn = "120"
 
-vim.opt.signcolumn = "yes"
+--vim.opt.signcolumn = "yes"
 
