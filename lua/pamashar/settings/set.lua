@@ -26,3 +26,10 @@ vim.opt.colorcolumn = "120"
 
 --vim.opt.signcolumn = "yes"
 
+-- Show hidden characters
+vim.opt.listchars = {
+    tab = "| ",
+    eol = "↵",
+    trail = "∘",
+}
+vim.opt.list = true
