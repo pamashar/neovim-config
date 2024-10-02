@@ -8,7 +8,20 @@ return {
 
         vim.keymap.set("n", "<leader>pf", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 
-        vim.keymap.set('n', '<leader>ps', function()
+        vim.keymap.set(
+            "n",
+            "<leader>gd",
+            "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>",
+            { noremap=true, silent=true }
+        )
+        vim.keymap.set(
+            "n",
+            "<leader>gdv",
+            "<cmd>lua require'telescope.builtin'.lsp_definitions({jump_type='vsplit'})<CR>",
+            { noremap=true, silent=true }
+        )
+
+        vim.keymap.set("n", "<leader>ps", function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end)
     end,

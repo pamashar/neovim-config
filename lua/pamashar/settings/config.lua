@@ -12,3 +12,9 @@ if vim.fn.has('nvim') == 1 then
     ]]
 end
 
+vim.api.nvim_create_autocmd('ColorScheme', {
+    command = [[
+        highlight CursorColumn guibg='#2a2b3c'
+        highlight ColorColumn guibg='#181825'
+    ]]
+})
