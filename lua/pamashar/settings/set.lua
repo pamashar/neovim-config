@@ -33,7 +33,7 @@ vim.opt.signcolumn = "yes"
 -- Enable hidden characters
 vim.opt.listchars = {
     tab = "| ",
-    eol = "↵",
+--    eol = "↵",
     trail = "∘",
 }
 vim.opt.list = true
