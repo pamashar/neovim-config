@@ -27,6 +27,7 @@ vim.opt.splitbelow = true -- splitting a window will put the new window below th
 --vim.opt.swapfile = false
 
 vim.opt.colorcolumn = "120"
+vim.opt.cursorcolumn = false
 
 vim.opt.signcolumn = "yes"
 
@@ -34,7 +35,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.listchars = {
     tab = "| ",
 --    eol = "↵",
-    trail = "∘",
+    trail = "•",
 }
 vim.opt.list = true
 

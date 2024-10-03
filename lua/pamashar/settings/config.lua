@@ -1,8 +1,6 @@
 -- Terminal mode:
---
 -- Turn off spell checking
 -- Turn off line numbers 
---
 if vim.fn.has('nvim') == 1 then
     vim.cmd[[
         augroup terminal_setup
@@ -18,3 +16,4 @@ vim.api.nvim_create_autocmd('ColorScheme', {
         highlight ColorColumn guibg='#181825'
     ]]
 })
+

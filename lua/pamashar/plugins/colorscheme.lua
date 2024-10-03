@@ -7,12 +7,12 @@ function ColorMyPencils(color)
 end
 
 return {
-    { 
-        "catppuccin/nvim", 
+    {
+        "catppuccin/nvim",
         lazy = false,
-        config = function() 
+        config = function()
             vim.cmd.colorscheme('catppuccin')
-        end 
+        end
     },
     --{
     --    "rose-pine/neovim",
