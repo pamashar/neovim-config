@@ -3,7 +3,13 @@ return {
     tag = "0.1.6",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-        require("telescope").setup()
+        require("telescope").setup({
+            defaults = {
+                file_ignore_patterns = {
+                    "node_modules"
+                }
+            }
+        })
         local builtin = require("telescope.builtin")
 
         vim.keymap.set("n", "<leader>pf", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
@@ -22,7 +28,7 @@ return {
         )
 
         vim.keymap.set("n", "<leader>ps", function()
-            builtin.grep_string({ search = vim.fn.input("Grep > ") })
+            builtin.grep_string({ search = vim.fn.input("Grep > ") }) -- brew install ripgrep should be executed first
         end)
     end,
 }

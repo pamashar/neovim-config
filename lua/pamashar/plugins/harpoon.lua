@@ -1,8 +1,9 @@
+local accent = "#d8d8fc"
 local grey = "#797C91"
 local bg = "#2a2b3c"
 vim.api.nvim_set_hl(0, "HarpoonInactive", { fg = grey, bg = bg })
-vim.api.nvim_set_hl(0, "HarpoonActive", { fg = grey })
-vim.api.nvim_set_hl(0, "HarpoonNumberActive", { fg = grey })
+vim.api.nvim_set_hl(0, "HarpoonActive", { fg = accent })
+vim.api.nvim_set_hl(0, "HarpoonNumberActive", { fg = accent })
 vim.api.nvim_set_hl(0, "HarpoonNumberInactive", { fg = grey, bg = bg })
 
 return {
@@ -13,7 +14,7 @@ return {
         local harpoon = require("harpoon")
         harpoon.setup()
 
-        vim.keymap.set("n", "<leader>a", function()
+        vim.keymap.set("n", "<leader>ma", function()
             harpoon:list():add()
             vim.cmd(":do User")
         end)
@@ -37,13 +38,15 @@ return {
             local marks_length = harpoon:list():length()
             local current_file_path = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":.")
             for index = 1, marks_length do
-                local harpoon_file_path = harpoon:list():get(index).value
-                local file_name = harpoon_file_path == "" and "(empty)" or vim.fn.fnamemodify(harpoon_file_path, ':t')
+                if pcall(function () local v = harpoon:list():get(index).value end) then
+                    local harpoon_file_path = harpoon:list():get(index).value
+                    local file_name = harpoon_file_path == "" and "(empty)" or vim.fn.fnamemodify(harpoon_file_path, ':t')
 
-                if current_file_path == harpoon_file_path then
-                    contents[index] = string.format("     %%#HarpoonNumberActive# %s: %%#HarpoonActive#%s", index, file_name)
-                else
-                    contents[index] = string.format("     %%#HarpoonNumberInactive# %s: %%#HarpoonInactive#%s", index, file_name)
+                    if current_file_path == harpoon_file_path then
+                        contents[index] = string.format(" %%#HarpoonNumberActive# %s:%%#HarpoonActive#%s", index, file_name)
+                    else
+                        contents[index] = string.format(" %%#HarpoonNumberInactive# %s:%%#HarpoonInactive#%s", index, file_name)
+                    end
                 end
             end
 

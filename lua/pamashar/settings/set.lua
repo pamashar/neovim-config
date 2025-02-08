@@ -15,19 +15,20 @@ vim.opt.cursorcolumn = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true -- splitting a window will put the new window below the current one
-
 --vim.opt.ignorecase = true -- ignore case when searching
 --vim.opt.hlsearch = false
 --vim.opt.incsearch = true
 
 -- Enable spell checking
---vim.opt.spelllang = { "en_us", "ru" }
+--vim.opt.spelllang = {
+--    "en",
+--    "ru"
+--}
 --vim.opt.spell = true
 
---vim.opt.swapfile = false
+vim.opt.swapfile = false
 
 vim.opt.colorcolumn = "120"
-vim.opt.cursorcolumn = false
 
 vim.opt.signcolumn = "yes"
 

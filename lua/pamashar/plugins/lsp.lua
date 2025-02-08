@@ -66,15 +66,23 @@ return {
                         }
                     }
                 end,
-                --["ts_ls"] = function()
-                --    local lspconfig = require("lspconfig")
-                --    lspconfig.ts_ls.setup {
-                --        capabilities = capabilities,
-                --        settings = {
-                --            file_tpes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
-                --        }
-                --    }
-                --end,
+                ["ts_ls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ts_ls.setup {
+                        capabilities = capabilities,
+                        settings = {
+                            file_types = {
+                                --"javascript",
+                                --"javascriptreact",
+                                --"javascript.jsx",
+                                "typescript",
+                                --"typescriptreact",
+                                --"typescript.tsx",
+                                "htmlangular"
+                            }
+                        }
+                    }
+                end,
             }
         })
 
