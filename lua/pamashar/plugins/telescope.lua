@@ -27,8 +27,11 @@ return {
             { noremap=true, silent=true }
         )
 
-        vim.keymap.set("n", "<leader>ps", function()
+        vim.keymap.set("n", "<leader>pg", function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") }) -- brew install ripgrep should be executed first
+        end)
+        vim.keymap.set("n", "<leader>ps", function()
+            builtin.live_grep()
         end)
     end,
 }
