@@ -14,6 +14,8 @@ vim.keymap.set("n", "<leader>rw", "viwdi")
 vim.keymap.set("n", "<leader>e", "<cmd>:lua vim.diagnostic.open_float()<CR>")
 --vim.keymap.set("n", "<leader>db", "v%d")
 
+vim.keymap.set("n", "<C-l>", "<cmd>:lua vim.lsp.buf.signature_help()<CR>")
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
